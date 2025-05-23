@@ -5,7 +5,7 @@ import './index.css';
 import axios from 'axios';
 
 // Set base URL for axios requests
-axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+axios.defaults.baseURL = "https://hostelhub-we5z.onrender.com";
 axios.defaults.withCredentials = true;
 
 createRoot(document.getElementById('root')).render(
