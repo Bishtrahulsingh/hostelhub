@@ -25,7 +25,9 @@ export const AuthProvider = ({ children }) => {
 
   // Login user
   const login = async (email, password) => {
-    const { data } = await axios.post('/api/users/auth', { email, password });
+    const { data } = await axios.post('/api/users/auth', { email, password },{
+  withCredentials: true,
+});
     setUser(data);
     return data;
   };
@@ -33,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   // Register user
   const register = async (userData) => {
     const { data } = await axios.post('/api/users', userData);
-    setUser(data);
+    setUser(data); 
     return data;
   };
 
