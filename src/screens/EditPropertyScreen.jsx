@@ -58,6 +58,8 @@ const EditPropertyScreen = () => {
         navigate('/login');
         return;
       }
+
+      console.log(user.isOwner)
       
       if (!user.isOwner) {
         toast.error('Only property owners can edit properties');

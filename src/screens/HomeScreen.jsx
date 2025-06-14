@@ -46,7 +46,7 @@ const HomeScreen = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-teal-600 to-teal-800 text-white py-16 md:py-24">
+      <section className="bg-[url('/public/hostelbackground.jpg')] bg-center text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
             Find Your Perfect <span className="text-amber-300">Accommodation</span> & <span className="text-amber-300">Roommates</span>

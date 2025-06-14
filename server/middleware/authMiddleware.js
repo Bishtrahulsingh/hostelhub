@@ -16,12 +16,10 @@ const protect = asyncHandler(async (req, res, next) => {
       next();
     } catch (error) {
       console.error(error);
-      res.status(401);
-      throw new Error('Not authorized, token failed');
+      return res.status(401).json({message: 'Not authorized, token failed'});
     }
   } else {
-    res.status(401);
-    throw new Error('Not authorized, no token');
+    return res.status(401).json({message: 'Not authorized, no token'});
   }
 });
 
@@ -29,8 +27,7 @@ const isOwner = (req, res, next) => {
   if (req.user && req.user.isOwner) {
     next();
   } else {
-    res.status(401);
-    throw new Error('Not authorized as an owner');
+    return res.status(401).json({message: 'Not authorized as an owner'});
   }
 };
 

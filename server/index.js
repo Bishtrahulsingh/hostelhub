@@ -1,5 +1,6 @@
-import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import connectDB from './config/db.js';
@@ -9,10 +10,9 @@ import propertyRoutes from './routes/propertyRoutes.js';
 import roommateRoutes from './routes/roommateRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
-dotenv.config();
 
 // Connect to MongoDB
-connectDB();
+connectDB(); 
 
 const app = express();
 
@@ -21,6 +21,8 @@ app.use(cors({
   origin: process.env.ORIGIN, // specify the frontend URL
   credentials: true                // allow cookies/headers
 }));
+
+console.log(`CORS enabled for origin: ${process.env.ORIGIN}`);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -35,6 +37,6 @@ app.use('/api/upload', uploadRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ; 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

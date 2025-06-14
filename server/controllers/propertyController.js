@@ -83,10 +83,9 @@ const getPropertyById = asyncHandler(async (req, res) => {
   );
 
   if (property) {
-    res.json(property);
+    return res.json(property);
   } else {
-    res.status(404);
-    throw new Error('Property not found');
+    return res.status(404).json({ message: 'Property not found' });
   }
 });
 
@@ -124,7 +123,7 @@ const createProperty = asyncHandler(async (req, res) => {
   });
 
   const createdProperty = await property.save();
-  res.status(201).json(createdProperty);
+  return res.status(201).json(createdProperty);
 });
 
 // @desc    Update a property
@@ -150,8 +149,7 @@ const updateProperty = asyncHandler(async (req, res) => {
   if (property) {
     // Check if the user is the owner of the property
     if (property.owner.toString() !== req.user._id.toString()) {
-      res.status(403);
-      throw new Error('You can only update your own listings');
+      return res.status(403).json({ message: 'You can only update your own listings' });
     }
 
     property.name = name || property.name;
@@ -170,10 +168,9 @@ const updateProperty = asyncHandler(async (req, res) => {
     }
 
     const updatedProperty = await property.save();
-    res.json(updatedProperty);
+    return res.json(updatedProperty);
   } else {
-    res.status(404);
-    throw new Error('Property not found');
+    return res.status(404).json({ message: 'Property not found' });
   }
 });
 
@@ -186,15 +183,13 @@ const deleteProperty = asyncHandler(async (req, res) => {
   if (property) {
     // Check if the user is the owner of the property
     if (property.owner.toString() !== req.user._id.toString()) {
-      res.status(403);
-      throw new Error('You can only delete your own listings');
+      return res.status(403).json({ message: 'You can only delete your own listings' });
     }
 
     await Property.deleteOne({ _id: property._id });
-    res.json({ message: 'Property removed' });
+    return res.json({ message: 'Property removed' });
   } else {
-    res.status(404);
-    throw new Error('Property not found');
+    return res.status(404).json({ message: 'Property not found' });
   }
 });
 
@@ -212,8 +207,7 @@ const createPropertyReview = asyncHandler(async (req, res) => {
     );
 
     if (alreadyReviewed) {
-      res.status(400);
-      throw new Error('Property already reviewed');
+      return res.status(400).json({ message: 'Property already reviewed' });
     }
 
     const review = {
@@ -232,10 +226,9 @@ const createPropertyReview = asyncHandler(async (req, res) => {
       property.reviews.length;
 
     await property.save();
-    res.status(201).json({ message: 'Review added' });
+    return res.status(201).json({ message: 'Review added' });
   } else {
-    res.status(404);
-    throw new Error('Property not found');
+    return res.status(404).json({ message: 'Property not found' });
   }
 });
 
