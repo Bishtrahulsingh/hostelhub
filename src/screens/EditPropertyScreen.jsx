@@ -58,8 +58,6 @@ const EditPropertyScreen = () => {
         navigate('/login');
         return;
       }
-
-      console.log(user.isOwner)
       
       if (!user.isOwner) {
         toast.error('Only property owners can edit properties');
@@ -75,9 +73,9 @@ const EditPropertyScreen = () => {
     try {
       setIsLoading(true);
       const { data } = await axios.get(`/api/properties/${id}`);
-      
+      console.log(data)
       // Check if the user is the owner of the property
-      if (data.owner.toString() !== user._id.toString()) {
+      if (data.owner._id.toString() !== user._id.toString()) {
         toast.error('You can only edit your own properties');
         navigate('/my-properties');
         return;
