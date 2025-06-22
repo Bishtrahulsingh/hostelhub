@@ -43,7 +43,7 @@ const navigate = useNavigate();
 
 const handleSearch = (e) => {
   e.preventDefault();
-  navigate(` /properties?keyword=${searchQuery}`);
+  navigate(`/properties?keyword=${searchQuery}`);
 };
 
   return (
