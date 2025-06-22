@@ -138,7 +138,7 @@ const PropertyDetailScreen = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-6">
-        <Link to="/properties" className="text-teal-600 hover:underline flex items-center">
+        <Link to="/properties" className="text-blue-600 hover:underline flex items-center">
           <ChevronLeft className="h-4 w-4 mr-1" />
           Back to Properties
         </Link>
@@ -172,7 +172,7 @@ const PropertyDetailScreen = () => {
               </>
             )}
             
-            <div className="absolute top-4 right-4 bg-teal-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
               {property.propertyType}
             </div>
           </div>
@@ -185,7 +185,7 @@ const PropertyDetailScreen = () => {
                   key={index}
                   onClick={() => setActiveImageIndex(index)}
                   className={`flex-shrink-0 w-24 h-24 rounded-md overflow-hidden cursor-pointer ${
-                    activeImageIndex === index ? 'ring-2 ring-teal-500' : ''
+                    activeImageIndex === index ? 'ring-2 ring-blue-500' : ''
                   }`}
                 >
                   <img
@@ -203,7 +203,7 @@ const PropertyDetailScreen = () => {
             <h1 className="text-3xl font-bold mb-2">{property.name}</h1>
             
             <div className="flex items-center text-gray-600 mb-4">
-              <MapPin className="h-5 w-5 text-teal-600 mr-2" />
+              <MapPin className="h-5 w-5 text-blue-600 mr-2" />
               <span>
                 {property.address.street}, {property.address.city}, {property.address.state}, {property.address.zipCode}
               </span>
@@ -225,7 +225,7 @@ const PropertyDetailScreen = () => {
             
             <div className="flex flex-wrap gap-4 mb-6">
               <div className="flex items-center bg-gray-100 px-4 py-2 rounded-full">
-                <DollarSign className="h-5 w-5 text-teal-600 mr-2" />
+                <DollarSign className="h-5 w-5 text-blue-600 mr-2" />
                 <div>
                   <p className="text-gray-500 text-sm">Rent</p>
                   <p className="font-semibold">₹{property.price.toLocaleString()}/month</p>
@@ -233,7 +233,7 @@ const PropertyDetailScreen = () => {
               </div>
               
               <div className="flex items-center bg-gray-100 px-4 py-2 rounded-full">
-                <DollarSign className="h-5 w-5 text-teal-600 mr-2" />
+                <DollarSign className="h-5 w-5 text-blue-600 mr-2" />
                 <div>
                   <p className="text-gray-500 text-sm">Deposit</p>
                   <p className="font-semibold">₹{property.deposit.toLocaleString()}</p>
@@ -241,7 +241,7 @@ const PropertyDetailScreen = () => {
               </div>
               
               <div className="flex items-center bg-gray-100 px-4 py-2 rounded-full">
-                <Shirt className="h-5 w-5 text-teal-600 mr-2" />
+                <Shirt className="h-5 w-5 text-blue-600 mr-2" />
                 <div>
                   <p className="text-gray-500 text-sm">Gender</p>
                   <p className="font-semibold">{property.gender}</p>
@@ -258,37 +258,37 @@ const PropertyDetailScreen = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
               {property.amenities.wifi && (
                 <div className="flex items-center">
-                  <Wifi className="h-5 w-5 text-teal-600 mr-2" />
+                  <Wifi className="h-5 w-5 text-blue-600 mr-2" />
                   <span>WiFi</span>
                 </div>
               )}
               {property.amenities.ac && (
                 <div className="flex items-center">
-                  <AirVent className="h-5 w-5 text-teal-600 mr-2" />
+                  <AirVent className="h-5 w-5 text-blue-600 mr-2" />
                   <span>Air Conditioning</span>
                 </div>
               )}
               {property.amenities.food && (
                 <div className="flex items-center">
-                  <Utensils className="h-5 w-5 text-teal-600 mr-2" />
+                  <Utensils className="h-5 w-5 text-blue-600 mr-2" />
                   <span>Food Included</span>
                 </div>
               )}
               {property.amenities.parking && (
                 <div className="flex items-center">
-                  <Car className="h-5 w-5 text-teal-600 mr-2" />
+                  <Car className="h-5 w-5 text-blue-600 mr-2" />
                   <span>Parking</span>
                 </div>
               )}
               {property.amenities.security && (
                 <div className="flex items-center">
-                  <ShieldCheck className="h-5 w-5 text-teal-600 mr-2" />
+                  <ShieldCheck className="h-5 w-5 text-blue-600 mr-2" />
                   <span>Security</span>
                 </div>
               )}
               {property.amenities.laundry && (
                 <div className="flex items-center">
-                  <Shirt className="h-5 w-5 text-teal-600 mr-2" />
+                  <Shirt className="h-5 w-5 text-blue-600 mr-2" />
                   <span>Laundry</span>
                 </div>
               )}
@@ -339,7 +339,7 @@ const PropertyDetailScreen = () => {
                       name="rating"
                       value={review.rating}
                       onChange={handleReviewChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     >
                       <option value="5">5 - Excellent</option>
                       <option value="4">4 - Very Good</option>
@@ -358,7 +358,7 @@ const PropertyDetailScreen = () => {
                       value={review.comment}
                       onChange={handleReviewChange}
                       rows="4"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Share your experience..."
                     ></textarea>
                   </div>
@@ -376,7 +376,7 @@ const PropertyDetailScreen = () => {
               <div className="bg-gray-50 p-4 rounded-md">
                 <p className="text-gray-700">
                   Please{' '}
-                  <Link to="/login" className="text-teal-600 hover:underline">
+                  <Link to="/login" className="text-blue-600 hover:underline">
                     sign in
                   </Link>{' '}
                   to write a review.
@@ -393,8 +393,8 @@ const PropertyDetailScreen = () => {
             
             <div className="space-y-4 mb-6">
               <div className="flex items-start">
-                <div className="bg-teal-100 p-2 rounded-full mr-3">
-                  <Phone className="h-5 w-5 text-teal-600" />
+                <div className="bg-blue-100 p-2 rounded-full mr-3">
+                  <Phone className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
                   <p className="text-gray-500 text-sm">Phone</p>
@@ -403,8 +403,8 @@ const PropertyDetailScreen = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="bg-teal-100 p-2 rounded-full mr-3">
-                  <Mail className="h-5 w-5 text-teal-600" />
+                <div className="bg-blue-100 p-2 rounded-full mr-3">
+                  <Mail className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
                   <p className="text-gray-500 text-sm">Email</p>
@@ -413,8 +413,8 @@ const PropertyDetailScreen = () => {
               </div>
               
               <div className="flex items-start">
-                <div className="bg-teal-100 p-2 rounded-full mr-3">
-                  <User className="h-5 w-5 text-teal-600" />
+                <div className="bg-blue-100 p-2 rounded-full mr-3">
+                  <User className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
                   <p className="text-gray-500 text-sm">Contact Person</p>

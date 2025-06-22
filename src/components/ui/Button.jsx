@@ -13,11 +13,11 @@ const Button = ({
   const baseStyles = 'font-medium rounded-md transition duration-300 focus:outline-none';
   
   const variantStyles = {
-    primary: 'bg-teal-600 text-white hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50',
+    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50',
     secondary: 'bg-amber-500 text-white hover:bg-amber-600 focus:ring-2 focus:ring-amber-400 focus:ring-opacity-50',
     danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50',
-    outline: 'bg-transparent border border-teal-600 text-teal-600 hover:bg-teal-50 focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50',
-    ghost: 'bg-transparent text-teal-600 hover:bg-teal-50 focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50',
+    outline: 'bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50',
+    ghost: 'bg-transparent text-blue-600 hover:bg-blue-50 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50',
   };
   
   const sizeStyles = {

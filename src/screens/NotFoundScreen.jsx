@@ -6,7 +6,7 @@ import Button from '../components/ui/Button';
 const NotFoundScreen = () => {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center px-4 py-12">
-      <h1 className="text-9xl font-bold text-teal-600">404</h1>
+      <h1 className="text-9xl font-bold text-blue-600">404</h1>
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-6 mb-2 text-center">
         Page Not Found
       </h2>

@@ -26,17 +26,17 @@ const RoommateCard = ({ roommate }) => {
           </div>
           
           <div className="mt-2 flex items-center text-gray-600 text-sm">
-            <MapPin className="h-4 w-4 mr-1 text-teal-600" />
+            <MapPin className="h-4 w-4 mr-1 text-blue-600" />
             <span>{roommate.location}</span>
           </div>
           
           <div className="mt-2 flex items-center text-gray-600 text-sm">
-            <Briefcase className="h-4 w-4 mr-1 text-teal-600" />
+            <Briefcase className="h-4 w-4 mr-1 text-blue-600" />
             <span>{roommate.occupation}</span>
           </div>
           
           <div className="mt-2 flex items-center text-gray-600 text-sm">
-            <CreditCard className="h-4 w-4 mr-1 text-teal-600" />
+            <CreditCard className="h-4 w-4 mr-1 text-blue-600" />
             <span>Budget: ₹{roommate.budget.toLocaleString()}/month</span>
           </div>
           

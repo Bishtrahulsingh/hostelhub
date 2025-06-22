@@ -71,13 +71,13 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
             value={filters.location}
             onChange={handleInputChange}
             placeholder="Search by location..."
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           />
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
         </div>
         <button
           onClick={handleFilterToggle}
-          className="ml-4 flex items-center text-teal-600 hover:text-teal-800"
+          className="ml-4 flex items-center text-blue-600 hover:text-blue-800"
         >
           <SlidersHorizontal className="h-5 w-5 mr-1" />
           <span>Filters</span>
@@ -94,7 +94,7 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
                 name="gender"
                 value={filters.gender}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">All</option>
                 <option value="Male">Male</option>
@@ -114,7 +114,7 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
                   value={filters.minBudget}
                   onChange={handleInputChange}
                   placeholder="Min"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
                 <input
                   type="number"
@@ -122,7 +122,7 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
                   value={filters.maxBudget}
                   onChange={handleInputChange}
                   placeholder="Max"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
@@ -135,7 +135,7 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
                 name="occupation"
                 value={filters.occupation}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">All</option>
                 <option value="Student">Student</option>
@@ -156,7 +156,7 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
                   name="smoking"
                   checked={filters.preferences.smoking}
                   onChange={handlePreferenceChange}
-                  className="rounded text-teal-600 focus:ring-teal-500"
+                  className="rounded text-blue-600 focus:ring-blue-500"
                 />
                 <span className="ml-2 text-sm text-gray-700">Smoker</span>
               </label>
@@ -166,7 +166,7 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
                   name="veg"
                   checked={filters.preferences.veg}
                   onChange={handlePreferenceChange}
-                  className="rounded text-teal-600 focus:ring-teal-500"
+                  className="rounded text-blue-600 focus:ring-blue-500"
                 />
                 <span className="ml-2 text-sm text-gray-700">Vegetarian</span>
               </label>

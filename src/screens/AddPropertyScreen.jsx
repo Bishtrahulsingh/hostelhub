@@ -229,7 +229,7 @@ const AddPropertyScreen = () => {
                     name="propertyType"
                     value={formData.propertyType}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     required
                   >
                     <option value="Hostel">Hostel</option>
@@ -249,7 +249,7 @@ const AddPropertyScreen = () => {
                     value={formData.description}
                     onChange={handleChange}
                     rows="4"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Describe your property, including features and surroundings"
                     required
                   ></textarea>
@@ -286,7 +286,7 @@ const AddPropertyScreen = () => {
                     name="gender"
                     value={formData.gender}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     required
                   >
                     <option value="Male">Male</option>
@@ -353,7 +353,7 @@ const AddPropertyScreen = () => {
                     name="amenities.wifi"
                     checked={formData.amenities.wifi}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">WiFi</span>
                 </label>
@@ -364,7 +364,7 @@ const AddPropertyScreen = () => {
                     name="amenities.ac"
                     checked={formData.amenities.ac}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Air Conditioning</span>
                 </label>
@@ -375,7 +375,7 @@ const AddPropertyScreen = () => {
                     name="amenities.food"
                     checked={formData.amenities.food}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Food Included</span>
                 </label>
@@ -386,7 +386,7 @@ const AddPropertyScreen = () => {
                     name="amenities.tv"
                     checked={formData.amenities.tv}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">TV</span>
                 </label>
@@ -397,7 +397,7 @@ const AddPropertyScreen = () => {
                     name="amenities.parking"
                     checked={formData.amenities.parking}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Parking</span>
                 </label>
@@ -408,7 +408,7 @@ const AddPropertyScreen = () => {
                     name="amenities.laundry"
                     checked={formData.amenities.laundry}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Laundry</span>
                 </label>
@@ -419,7 +419,7 @@ const AddPropertyScreen = () => {
                     name="amenities.cleaning"
                     checked={formData.amenities.cleaning}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Cleaning</span>
                 </label>
@@ -430,7 +430,7 @@ const AddPropertyScreen = () => {
                     name="amenities.security"
                     checked={formData.amenities.security}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Security</span>
                 </label>
@@ -479,9 +479,9 @@ const AddPropertyScreen = () => {
               
               <div className="mb-6">
                 <label className="block w-full">
-                  <div className="flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-6 cursor-pointer hover:border-teal-500 transition-colors">
+                  <div className="flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-6 cursor-pointer hover:border-blue-500 transition-colors">
                     <div className="text-center">
-                      <Upload className="h-8 w-8 text-teal-600 mx-auto mb-2" />
+                      <Upload className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                       <p className="text-gray-700">Click to upload images</p>
                       <p className="text-sm text-gray-500">PNG, JPG or JPEG (max 5MB)</p>
                     </div>
@@ -525,7 +525,7 @@ const AddPropertyScreen = () => {
                   <p className="text-sm text-gray-600 mb-1">Uploading images: {uploadProgress}%</p>
                   <div className="w-full bg-gray-200 rounded-full h-2.5">
                     <div
-                      className="bg-teal-600 h-2.5 rounded-full"
+                      className="bg-blue-600 h-2.5 rounded-full"
                       style={{ width: `${uploadProgress}%` }}
                     ></div>
                   </div>

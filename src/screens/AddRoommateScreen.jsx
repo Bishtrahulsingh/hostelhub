@@ -188,7 +188,7 @@ const AddRoommateScreen = () => {
                   </div>
                   <label
                     htmlFor="profileImage"
-                    className="absolute bottom-0 right-0 bg-teal-600 text-white p-2 rounded-full cursor-pointer hover:bg-teal-700 transition-colors"
+                    className="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full cursor-pointer hover:bg-blue-700 transition-colors"
                   >
                     <Upload className="h-5 w-5" />
                     <input
@@ -236,7 +236,7 @@ const AddRoommateScreen = () => {
                     name="gender"
                     value={formData.gender}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     required
                   >
                     <option value="Male">Male</option>
@@ -254,7 +254,7 @@ const AddRoommateScreen = () => {
                     name="occupation"
                     value={formData.occupation}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     required
                   >
                     <option value="Student">Student</option>
@@ -299,7 +299,7 @@ const AddRoommateScreen = () => {
                     value={formData.description}
                     onChange={handleChange}
                     rows="4"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Describe yourself, your lifestyle, and what you're looking for in a roommate"
                     required
                   ></textarea>
@@ -316,7 +316,7 @@ const AddRoommateScreen = () => {
                     name="preferences.smoking"
                     checked={formData.preferences.smoking}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Smoking</span>
                 </label>
@@ -327,7 +327,7 @@ const AddRoommateScreen = () => {
                     name="preferences.drinking"
                     checked={formData.preferences.drinking}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Drinking</span>
                 </label>
@@ -338,7 +338,7 @@ const AddRoommateScreen = () => {
                     name="preferences.pets"
                     checked={formData.preferences.pets}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Pet Friendly</span>
                 </label>
@@ -349,7 +349,7 @@ const AddRoommateScreen = () => {
                     name="preferences.veg"
                     checked={formData.preferences.veg}
                     onChange={handleChange}
-                    className="rounded text-teal-600 focus:ring-teal-500"
+                    className="rounded text-blue-600 focus:ring-blue-500"
                   />
                   <span className="ml-2 text-gray-700">Vegetarian</span>
                 </label>

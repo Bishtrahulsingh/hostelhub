@@ -75,14 +75,14 @@ const RegisterScreen = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          <UserPlus className="h-12 w-12 text-teal-600" />
+          <UserPlus className="h-12 w-12 text-blue-600" />
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Create a new account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           Or{' '}
-          <Link to="/login" className="font-medium text-teal-600 hover:text-teal-500">
+          <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">
             sign in to your existing account
           </Link>
         </p>
@@ -153,7 +153,7 @@ const RegisterScreen = () => {
                 type="checkbox"
                 checked={formData.isOwner}
                 onChange={handleChange}
-                className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
               <label htmlFor="isOwner" className="ml-2 block text-sm text-gray-900">
                 Register as a Property Owner

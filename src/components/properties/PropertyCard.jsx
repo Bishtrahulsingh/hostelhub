@@ -12,7 +12,7 @@ const PropertyCard = ({ property }) => {
           alt={property.name}
           className="w-full h-full object-cover"
         />
-        <div className="absolute top-0 right-0 bg-teal-600 text-white px-2 py-1 text-sm font-semibold">
+        <div className="absolute top-0 right-0 bg-blue-600 text-white px-2 py-1 text-sm font-semibold">
           {property.propertyType}
         </div>
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
@@ -37,22 +37,22 @@ const PropertyCard = ({ property }) => {
         
         <div className="flex flex-wrap gap-2 mb-4">
           {property.amenities.wifi && (
-            <span className="inline-flex items-center bg-teal-50 text-teal-700 px-2 py-1 rounded text-xs">
+            <span className="inline-flex items-center bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs">
               <Wifi className="h-3 w-3 mr-1" /> Wifi
             </span>
           )}
           {property.amenities.ac && (
-            <span className="inline-flex items-center bg-teal-50 text-teal-700 px-2 py-1 rounded text-xs">
+            <span className="inline-flex items-center bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs">
               <AirVent className="h-3 w-3 mr-1" /> AC
             </span>
           )}
           {property.amenities.food && (
-            <span className="inline-flex items-center bg-teal-50 text-teal-700 px-2 py-1 rounded text-xs">
+            <span className="inline-flex items-center bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs">
               <Utensils className="h-3 w-3 mr-1" /> Food
             </span>
           )}
           {property.amenities.parking && (
-            <span className="inline-flex items-center bg-teal-50 text-teal-700 px-2 py-1 rounded text-xs">
+            <span className="inline-flex items-center bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs">
               <Car className="h-3 w-3 mr-1" /> Parking
             </span>
           )}

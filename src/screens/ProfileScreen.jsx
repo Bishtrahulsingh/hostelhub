@@ -163,7 +163,7 @@ const ProfileScreen = () => {
               </div>
               <label
                 htmlFor="profileImage"
-                className="absolute bottom-0 right-0 bg-teal-600 text-white p-2 rounded-full cursor-pointer hover:bg-teal-700 transition-colors"
+                className="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full cursor-pointer hover:bg-blue-700 transition-colors"
               >
                 <Upload className="h-5 w-5" />
                 <input

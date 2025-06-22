@@ -18,33 +18,33 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-teal-700 shadow-md sticky top-0 z-50">
+    <header className="bg-blue-700 shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center">
             <Home className="h-8 w-8 text-white mr-2" />
-            <span className="text-white font-bold text-xl">HostelHub</span>
+            <span className="text-white font-bold text-xl">Rentalhub</span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link to="/properties" className="text-white hover:text-teal-100 transition duration-300">
+            <Link to="/properties" className="text-white hover:text-blue-100 transition duration-300">
               Properties
             </Link>
-            <Link to="/roommates" className="text-white hover:text-teal-100 transition duration-300">
+            <Link to="/roommates" className="text-white hover:text-blue-100 transition duration-300">
               Find Roommates
             </Link>
             
             {user ? (
               <div className="relative group">
-                <button className="flex items-center text-white hover:text-teal-100">
+                <button className="flex items-center text-white hover:text-blue-100">
                   <span className="mr-2">{user.name}</span>
                   <User className="h-5 w-5" />
                 </button>
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                   <Link 
                     to="/profile" 
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
                   >
                     Profile
                   </Link>
@@ -52,13 +52,13 @@ const Header = () => {
                     <>
                       <Link 
                         to="/my-properties" 
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
                       >
                         My Properties
                       </Link>
                       <Link 
                         to="/add-property" 
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
                       >
                         Add Property
                       </Link>
@@ -66,13 +66,13 @@ const Header = () => {
                   )}
                   <Link 
                     to="/add-roommate" 
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-teal-50"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
                   >
                     Add Roommate Listing
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-teal-50"
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
                   >
                     Logout
                   </button>
@@ -82,13 +82,13 @@ const Header = () => {
               <div className="flex items-center space-x-4">
                 <Link 
                   to="/login" 
-                  className="text-white hover:text-teal-100 transition duration-300"
+                  className="text-white hover:text-blue-100 transition duration-300"
                 >
                   Login
                 </Link>
                 <Link 
                   to="/register" 
-                  className="bg-white text-teal-600 px-4 py-2 rounded-md hover:bg-teal-50 transition duration-300"
+                  className="bg-white text-blue-600 px-4 py-2 rounded-md hover:bg-blue-50 transition duration-300"
                 >
                   Register
                 </Link>
@@ -107,7 +107,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-teal-500">
+          <nav className="md:hidden py-4 border-t border-blue-500">
             <ul className="space-y-2">
               <li>
                 <Link 
@@ -197,7 +197,7 @@ const Header = () => {
                   <li>
                     <Link 
                       to="/register" 
-                      className="block bg-white text-teal-600 px-4 py-2 rounded-md"
+                      className="block bg-white text-blue-600 px-4 py-2 rounded-md"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Register

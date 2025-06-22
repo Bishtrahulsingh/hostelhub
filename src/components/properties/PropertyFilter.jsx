@@ -83,13 +83,13 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
             value={filters.keyword}
             onChange={handleInputChange}
             placeholder="Search by property name or city..."
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           />
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
         </div>
         <button
           onClick={handleFilterToggle}
-          className="ml-4 flex items-center text-teal-600 hover:text-teal-800"
+          className="ml-4 flex items-center text-blue-600 hover:text-blue-800"
         >
           <SlidersHorizontal className="h-5 w-5 mr-1" />
           <span>Filters</span>
@@ -174,7 +174,7 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
                     name={amenity}
                     checked={filters.amenities[amenity]}
                     onChange={handleAmenityChange}
-                    className="rounded text-teal-600"
+                    className="rounded text-blue-600"
                   />
                   <span className="ml-2 text-sm text-gray-700">{amenity.toUpperCase()}</span>
                 </label>

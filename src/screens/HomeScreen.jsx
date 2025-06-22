@@ -86,7 +86,7 @@ const handleSearch = (e) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Link to="/properties?propertyType=Hostel" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div className="bg-teal-100 text-teal-600 rounded-full p-3 w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300">
+                <div className="bg-blue-100 text-blue-600 rounded-full p-3 w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                   <Building className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Hostels</h3>
@@ -173,30 +173,30 @@ const handleSearch = (e) => {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-            Why Choose HostelHub?
+            Why Choose Rentalhub?
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <CheckCircle className="h-10 w-10 text-teal-600 mb-4" />
+              <CheckCircle className="h-10 w-10 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Verified Listings</h3>
               <p className="text-gray-600">All our listings are verified to ensure you get authentic options.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <CheckCircle className="h-10 w-10 text-teal-600 mb-4" />
+              <CheckCircle className="h-10 w-10 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Direct Contact</h3>
               <p className="text-gray-600">Connect directly with property owners and potential roommates.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <CheckCircle className="h-10 w-10 text-teal-600 mb-4" />
+              <CheckCircle className="h-10 w-10 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Detailed Filters</h3>
               <p className="text-gray-600">Find exactly what you're looking for with our advanced filters.</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <CheckCircle className="h-10 w-10 text-teal-600 mb-4" />
+              <CheckCircle className="h-10 w-10 text-blue-600 mb-4" />
               <h3 className="text-xl font-semibold mb-2">Free Listing</h3>
               <p className="text-gray-600">List your property or profile as a potential roommate for free.</p>
             </div>
@@ -211,7 +211,7 @@ const handleSearch = (e) => {
             Are you a property owner?
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-8">
-            List your property on HostelHub and connect with thousands of people looking for accommodation.
+            List your property on Rentalhub and connect with thousands of people looking for accommodation.
           </p>
           <Link to="/register">
             <Button variant="primary" className="bg-white text-amber-600 hover:bg-gray-100">

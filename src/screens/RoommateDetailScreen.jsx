@@ -73,7 +73,7 @@ const RoommateDetailScreen = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-6">
-        <Link to="/roommates" className="text-teal-600 hover:underline flex items-center">
+        <Link to="/roommates" className="text-blue-600 hover:underline flex items-center">
           <ChevronLeft className="h-4 w-4 mr-1" />
           Back to Roommates
         </Link>
@@ -103,7 +103,7 @@ const RoommateDetailScreen = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="flex items-center">
-                <MapPin className="h-5 w-5 text-teal-600 mr-3" />
+                <MapPin className="h-5 w-5 text-blue-600 mr-3" />
                 <div>
                   <p className="text-gray-500 text-sm">Location</p>
                   <p className="font-medium">{roommate.location}</p>
@@ -111,7 +111,7 @@ const RoommateDetailScreen = () => {
               </div>
               
               <div className="flex items-center">
-                <Briefcase className="h-5 w-5 text-teal-600 mr-3" />
+                <Briefcase className="h-5 w-5 text-blue-600 mr-3" />
                 <div>
                   <p className="text-gray-500 text-sm">Occupation</p>
                   <p className="font-medium">{roommate.occupation}</p>
@@ -119,7 +119,7 @@ const RoommateDetailScreen = () => {
               </div>
               
               <div className="flex items-center">
-                <CreditCard className="h-5 w-5 text-teal-600 mr-3" />
+                <CreditCard className="h-5 w-5 text-blue-600 mr-3" />
                 <div>
                   <p className="text-gray-500 text-sm">Budget</p>
                   <p className="font-medium">₹{roommate.budget.toLocaleString()}/month</p>
@@ -127,7 +127,7 @@ const RoommateDetailScreen = () => {
               </div>
               
               <div className="flex items-center">
-                <Calendar className="h-5 w-5 text-teal-600 mr-3" />
+                <Calendar className="h-5 w-5 text-blue-600 mr-3" />
                 <div>
                   <p className="text-gray-500 text-sm">Looking Since</p>
                   <p className="font-medium">{new Date(roommate.createdAt).toLocaleDateString()}</p>
@@ -187,7 +187,7 @@ const RoommateDetailScreen = () => {
               <h2 className="text-xl font-semibold mb-3">Contact Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-teal-600 mr-3" />
+                  <Phone className="h-5 w-5 text-blue-600 mr-3" />
                   <div>
                     <p className="text-gray-500 text-sm">Phone</p>
                     <p className="font-medium">{roommate.contactInfo.phone}</p>
@@ -195,7 +195,7 @@ const RoommateDetailScreen = () => {
                 </div>
                 
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-teal-600 mr-3" />
+                  <Mail className="h-5 w-5 text-blue-600 mr-3" />
                   <div>
                     <p className="text-gray-500 text-sm">Email</p>
                     <p className="font-medium">{roommate.contactInfo.email}</p>

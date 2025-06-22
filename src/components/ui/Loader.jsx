@@ -10,7 +10,7 @@ const Loader = ({ size = 'md' }) => {
   return (
     <div className="flex justify-center items-center">
       <svg
-        className={`animate-spin ${sizeClasses[size]} text-teal-600`}
+        className={`animate-spin ${sizeClasses[size]} text-blue-600`}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
