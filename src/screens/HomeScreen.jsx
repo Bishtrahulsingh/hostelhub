@@ -6,6 +6,7 @@ import Button from '../components/ui/Button';
 import PropertyCard from '../components/properties/PropertyCard';
 import RoommateCard from '../components/roommates/RoommateCard';
 import Loader from '../components/ui/Loader';
+import { useNavigate } from 'react-router-dom';
 
 const HomeScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -38,10 +39,12 @@ const HomeScreen = () => {
     fetchRecentRoommates();
   }, []);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    window.location.href = `/properties?keyword=${searchQuery}`;
-  };
+const navigate = useNavigate();
+
+const handleSearch = (e) => {
+  e.preventDefault();
+  navigate(` /properties?keyword=${searchQuery}`);
+};
 
   return (
     <div>

@@ -147,7 +147,7 @@ const RoommateDetailScreen = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="flex items-center">
                   {roommate.preferences.smoking ? (
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                    <CheckCircle className="h-5 w-5 text-gray-500 mr-2" />
                   ) : (
                     <XCircle className="h-5 w-5 text-red-500 mr-2" />
                   )}
@@ -156,7 +156,7 @@ const RoommateDetailScreen = () => {
                 
                 <div className="flex items-center">
                   {roommate.preferences.drinking ? (
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                    <CheckCircle className="h-5 w-5 text-gray-500 mr-2" />
                   ) : (
                     <XCircle className="h-5 w-5 text-red-500 mr-2" />
                   )}
@@ -165,7 +165,7 @@ const RoommateDetailScreen = () => {
                 
                 <div className="flex items-center">
                   {roommate.preferences.pets ? (
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                    <CheckCircle className="h-5 w-5 text-gray-500 mr-2" />
                   ) : (
                     <XCircle className="h-5 w-5 text-red-500 mr-2" />
                   )}
@@ -174,7 +174,7 @@ const RoommateDetailScreen = () => {
                 
                 <div className="flex items-center">
                   {roommate.preferences.veg ? (
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                    <CheckCircle className="h-5 w-5 text-gray-500 mr-2" />
                   ) : (
                     <XCircle className="h-5 w-5 text-red-500 mr-2" />
                   )}
