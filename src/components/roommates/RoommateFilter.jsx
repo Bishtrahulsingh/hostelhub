@@ -84,8 +84,7 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
         </button>
       </div>
 
-      {isFilterOpen && (
-        <form onSubmit={handleSubmit} className="mt-4 pt-4 border-t border-gray-200">
+      <form onSubmit={handleSubmit} className="mt-4 pt-4 border-t border-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -183,7 +182,6 @@ const RoommateFilter = ({ onFilterChange, clearFilters }) => {
             </Button>
           </div>
         </form>
-      )}
     </div>
   );
 };

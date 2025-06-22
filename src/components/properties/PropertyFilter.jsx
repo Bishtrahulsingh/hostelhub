@@ -24,21 +24,28 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFilters((prevFilters) => ({
-      ...prevFilters,
+    const updatedFilters = {
+      ...filters,
       [name]: value,
-    }));
+    };
+    setFilters(updatedFilters);
+
+    // Live keyword filter
+    if (name === 'keyword') {
+      onFilterChange(updatedFilters);
+    }
   };
 
   const handleAmenityChange = (e) => {
     const { name, checked } = e.target;
-    setFilters((prevFilters) => ({
-      ...prevFilters,
+    const updatedFilters = {
+      ...filters,
       amenities: {
-        ...prevFilters.amenities,
+        ...filters.amenities,
         [name]: checked,
       },
-    }));
+    };
+    setFilters(updatedFilters);
   };
 
   const handleSubmit = (e) => {
@@ -48,7 +55,7 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
   };
 
   const handleClear = () => {
-    setFilters({
+    const defaultFilters = {
       keyword: '',
       propertyType: '',
       minPrice: '',
@@ -60,7 +67,8 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
         food: false,
         parking: false,
       },
-    });
+    };
+    setFilters(defaultFilters);
     clearFilters();
     setIsFilterOpen(false);
   };
@@ -99,7 +107,7 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
                 name="propertyType"
                 value={filters.propertyType}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
               >
                 <option value="">All Types</option>
                 <option value="Hostel">Hostel</option>
@@ -109,6 +117,7 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
               </select>
             </div>
 
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Price Range (₹)
@@ -120,7 +129,7 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
                   value={filters.minPrice}
                   onChange={handleInputChange}
                   placeholder="Min"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
                 />
                 <input
                   type="number"
@@ -128,11 +137,12 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
                   value={filters.maxPrice}
                   onChange={handleInputChange}
                   placeholder="Max"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
                 />
               </div>
             </div>
 
+    
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Gender
@@ -141,7 +151,7 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
                 name="gender"
                 value={filters.gender}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal-500 focus:border-teal-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
               >
                 <option value="">All</option>
                 <option value="Male">Male</option>
@@ -151,51 +161,24 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
             </div>
           </div>
 
+          
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Amenities
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  name="wifi"
-                  checked={filters.amenities.wifi}
-                  onChange={handleAmenityChange}
-                  className="rounded text-teal-600 focus:ring-teal-500"
-                />
-                <span className="ml-2 text-sm text-gray-700">WiFi</span>
-              </label>
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  name="ac"
-                  checked={filters.amenities.ac}
-                  onChange={handleAmenityChange}
-                  className="rounded text-teal-600 focus:ring-teal-500"
-                />
-                <span className="ml-2 text-sm text-gray-700">AC</span>
-              </label>
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  name="food"
-                  checked={filters.amenities.food}
-                  onChange={handleAmenityChange}
-                  className="rounded text-teal-600 focus:ring-teal-500"
-                />
-                <span className="ml-2 text-sm text-gray-700">Food</span>
-              </label>
-              <label className="inline-flex items-center">
-                <input
-                  type="checkbox"
-                  name="parking"
-                  checked={filters.amenities.parking}
-                  onChange={handleAmenityChange}
-                  className="rounded text-teal-600 focus:ring-teal-500"
-                />
-                <span className="ml-2 text-sm text-gray-700">Parking</span>
-              </label>
+              {["wifi", "ac", "food", "parking"].map((amenity) => (
+                <label key={amenity} className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    name={amenity}
+                    checked={filters.amenities[amenity]}
+                    onChange={handleAmenityChange}
+                    className="rounded text-teal-600"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">{amenity.toUpperCase()}</span>
+                </label>
+              ))}
             </div>
           </div>
 

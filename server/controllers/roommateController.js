@@ -8,9 +8,12 @@ const getRoommates = asyncHandler(async (req, res) => {
   const pageSize = 10;
   const page = Number(req.query.pageNumber) || 1;
 
+  // Log incoming query
+  console.log('Incoming query:', req.query);
+
   // Filter by location
-  const locationFilter = req.query.location
-    ? { location: { $regex: req.query.location, $options: 'i' } }
+  const locationFilter = req.query.location?.trim()
+    ? { location: { $regex: req.query.location.trim(), $options: 'i' } }
     : {};
 
   // Filter by gender
@@ -21,10 +24,16 @@ const getRoommates = asyncHandler(async (req, res) => {
   // Filter by budget range
   const budgetFilter = {};
   if (req.query.minBudget) {
-    budgetFilter.budget = { ...budgetFilter.budget, $gte: Number(req.query.minBudget) };
+    budgetFilter.budget = {
+      ...budgetFilter.budget,
+      $gte: Number(req.query.minBudget),
+    };
   }
   if (req.query.maxBudget) {
-    budgetFilter.budget = { ...budgetFilter.budget, $lte: Number(req.query.maxBudget) };
+    budgetFilter.budget = {
+      ...budgetFilter.budget,
+      $lte: Number(req.query.maxBudget),
+    };
   }
 
   // Filter by occupation
@@ -44,6 +53,7 @@ const getRoommates = asyncHandler(async (req, res) => {
   // Only show active listings
   const activeFilter = { isActive: true };
 
+  // Merge all filters
   const filters = {
     ...locationFilter,
     ...genderFilter,
@@ -53,11 +63,16 @@ const getRoommates = asyncHandler(async (req, res) => {
     ...activeFilter,
   };
 
+  // Debug filters
+  console.log('Final filters:', filters);
+
   const count = await Roommate.countDocuments(filters);
   const roommates = await Roommate.find(filters)
     .limit(pageSize)
     .skip(pageSize * (page - 1))
     .sort({ createdAt: -1 });
+
+  console.log(`Found ${roommates.length} roommates`);
 
   res.json({
     roommates,
@@ -144,7 +159,6 @@ const updateRoommate = asyncHandler(async (req, res) => {
   const roommate = await Roommate.findById(req.params.id);
 
   if (roommate) {
-    // Check if the user is the owner of the roommate listing
     if (roommate.user.toString() !== req.user._id.toString()) {
       res.status(403);
       throw new Error('You can only update your own listings');
@@ -177,18 +191,17 @@ const deleteRoommate = asyncHandler(async (req, res) => {
   const roommate = await Roommate.findById(req.params.id);
 
   if (roommate) {
-    // Check if the user is the owner of the roommate listing
     if (roommate.user.toString() !== req.user._id.toString()) {
       res.status(403);
       throw new Error('You can only delete your own listings');
     }
-
+ 
     await Roommate.deleteOne({ _id: roommate._id });
     res.json({ message: 'Roommate listing removed' });
   } else {
     res.status(404);
     throw new Error('Roommate listing not found');
-  }
+  } 
 });
 
 export {
