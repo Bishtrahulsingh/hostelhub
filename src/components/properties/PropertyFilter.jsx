@@ -30,7 +30,6 @@ const PropertyFilter = ({ onFilterChange, clearFilters }) => {
     };
     setFilters(updatedFilters);
 
-    // Live keyword filter
     if (name === 'keyword') {
       onFilterChange(updatedFilters);
     }

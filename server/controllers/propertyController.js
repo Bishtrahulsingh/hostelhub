@@ -1,9 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import Property from '../models/propertyModel.js';
 
-// @desc    Fetch all properties
-// @route   GET /api/properties
-// @access  Public
 const getProperties = asyncHandler(async (req, res) => {
   const pageSize = 10;
   const page = Number(req.query.pageNumber) || 1;
@@ -16,13 +13,10 @@ const getProperties = asyncHandler(async (req, res) => {
         ],
       }
     : {};
-
-  // Filter by property type
   const propertyTypeFilter = req.query.propertyType
     ? { propertyType: req.query.propertyType }
     : {};
 
-  // Filter by price range
   const priceFilter = {};
   if (req.query.minPrice) {
     priceFilter.price = { ...priceFilter.price, $gte: Number(req.query.minPrice) };
@@ -31,12 +25,10 @@ const getProperties = asyncHandler(async (req, res) => {
     priceFilter.price = { ...priceFilter.price, $lte: Number(req.query.maxPrice) };
   }
 
-  // Filter by gender
   const genderFilter = req.query.gender
     ? { gender: req.query.gender }
     : {};
 
-  // Filter by amenities
   const amenitiesFilter = {};
   if (req.query.wifi === 'true') {
     amenitiesFilter['amenities.wifi'] = true;
@@ -72,10 +64,6 @@ const getProperties = asyncHandler(async (req, res) => {
     total: count,
   });
 });
-
-// @desc    Fetch single property
-// @route   GET /api/properties/:id
-// @access  Public
 const getPropertyById = asyncHandler(async (req, res) => {
   const property = await Property.findById(req.params.id).populate(
     'owner',
@@ -89,9 +77,6 @@ const getPropertyById = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Create a property
-// @route   POST /api/properties
-// @access  Private/Owner
 const createProperty = asyncHandler(async (req, res) => {
   const {
     name,
@@ -126,9 +111,6 @@ const createProperty = asyncHandler(async (req, res) => {
   return res.status(201).json(createdProperty);
 });
 
-// @desc    Update a property
-// @route   PUT /api/properties/:id
-// @access  Private/Owner
 const updateProperty = asyncHandler(async (req, res) => {
   const {
     name,
@@ -147,7 +129,6 @@ const updateProperty = asyncHandler(async (req, res) => {
   const property = await Property.findById(req.params.id);
 
   if (property) {
-    // Check if the user is the owner of the property
     if (property.owner.toString() !== req.user._id.toString()) {
       return res.status(403).json({ message: 'You can only update your own listings' });
     }
@@ -174,14 +155,10 @@ const updateProperty = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Delete a property
-// @route   DELETE /api/properties/:id
-// @access  Private/Owner
 const deleteProperty = asyncHandler(async (req, res) => {
   const property = await Property.findById(req.params.id);
 
   if (property) {
-    // Check if the user is the owner of the property
     if (property.owner.toString() !== req.user._id.toString()) {
       return res.status(403).json({ message: 'You can only delete your own listings' });
     }
@@ -193,9 +170,6 @@ const deleteProperty = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Create new review
-// @route   POST /api/properties/:id/reviews
-// @access  Private
 const createPropertyReview = asyncHandler(async (req, res) => {
   const { rating, comment } = req.body;
 

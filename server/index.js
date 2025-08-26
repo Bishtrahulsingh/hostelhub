@@ -11,29 +11,24 @@ import roommateRoutes from './routes/roommateRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
 
-// Connect to MongoDB
 connectDB(); 
 
 const app = express();
 
-// Middleware
 app.use(cors({
-  origin: process.env.ORIGIN, // specify the frontend URL
-  credentials: true                // allow cookies/headers
+  origin: process.env.ORIGIN, 
+  credentials: true
 }));
 
-console.log(`CORS enabled for origin: ${process.env.ORIGIN}`);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Routes
 app.use('/api/users', userRoutes);
 app.use('/api/properties', propertyRoutes);
 app.use('/api/roommates', roommateRoutes);
 app.use('/api/upload', uploadRoutes);
 
-// Error Middleware
 app.use(notFound);
 app.use(errorHandler);
 

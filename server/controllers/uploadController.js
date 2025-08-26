@@ -2,9 +2,6 @@ import asyncHandler from 'express-async-handler';
 import cloudinary from '../config/cloudinary.js';
 import streamifier from 'streamifier';
 
-// @desc    Upload image to cloudinary
-// @route   POST /api/upload
-// @access  Private
 const uploadImage = asyncHandler(async (req, res) => {
   if (!req.file) {
     res.status(400);

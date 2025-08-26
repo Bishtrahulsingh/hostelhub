@@ -26,7 +26,6 @@ const Header = () => {
             <span className="text-white font-bold text-xl">Rentalhub</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             <Link to="/properties" className="text-white hover:text-blue-100 transition duration-300">
               Properties
@@ -96,7 +95,6 @@ const Header = () => {
             )}
           </nav>
 
-          {/* Mobile menu button */}
           <button 
             className="md:hidden text-white"
             onClick={toggleMenu}
@@ -105,7 +103,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden py-4 border-t border-blue-500">
             <ul className="space-y-2">

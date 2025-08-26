@@ -68,7 +68,7 @@ const RoommateDetailScreen = () => {
 
   if (!roommate) return null;
 
-  const defaultImage = 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg';
+  const defaultImage = 'https://share.google/images/uAIyvIQUWc2i38KfD';
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -81,7 +81,6 @@ const RoommateDetailScreen = () => {
       
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <div className="md:flex">
-          {/* Profile Image */}
           <div className="md:w-1/3 p-6 flex justify-center">
             <div className="w-64 h-64 rounded-full overflow-hidden">
               <img
@@ -91,8 +90,7 @@ const RoommateDetailScreen = () => {
               />
             </div>
           </div>
-          
-          {/* Roommate Details */}
+ 
           <div className="md:w-2/3 p-6">
             <div className="flex justify-between items-start">
               <h1 className="text-3xl font-bold mb-2">{roommate.name}</h1>

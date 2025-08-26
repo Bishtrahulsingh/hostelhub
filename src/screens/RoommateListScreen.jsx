@@ -6,7 +6,6 @@ import RoommateCard from '../components/roommates/RoommateCard';
 import Loader from '../components/ui/Loader';
 import Button from '../components/ui/Button';
 
-// Custom debounce hook
 function useDebounce(value, delay) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -28,7 +27,6 @@ const RoommateListScreen = () => {
 
   const page = parseInt(searchParams.get('page')) || 1;
 
-  // Initial filters from URL
   const initialFilters = {
     location: searchParams.get('location') || '',
     gender: searchParams.get('gender') || '',
@@ -44,7 +42,6 @@ const RoommateListScreen = () => {
   const [filters, setFilters] = useState(initialFilters);
   const debouncedFilters = useDebounce(filters, 500);
 
-  // Fetch roommates based on current searchParams
   useEffect(() => {
     const fetchRoommates = async () => {
       try {
@@ -64,7 +61,6 @@ const RoommateListScreen = () => {
     fetchRoommates();
   }, [searchParams]);
 
-  // Update searchParams when filters change (debounced)
   useEffect(() => {
     const params = new URLSearchParams();
 
@@ -80,12 +76,12 @@ const RoommateListScreen = () => {
     if (debouncedFilters.preferences.veg) params.set('veg', 'true');
     else params.delete('veg');
 
-    params.set('page', '1'); // reset page
+    params.set('page', '1');
     setSearchParams(params);
   }, [debouncedFilters]);
 
   const handleFilterChange = (newFilters) => {
-    setFilters(newFilters); // just update state, searchParams is handled by useEffect
+    setFilters(newFilters);
   };
 
   const clearFilters = () => {
@@ -99,7 +95,7 @@ const RoommateListScreen = () => {
     };
 
     setFilters(cleared);
-    setSearchParams({ page: '1' }); // reset URL
+    setSearchParams({ page: '1' });
   };
 
   const goToPage = (newPage) => {

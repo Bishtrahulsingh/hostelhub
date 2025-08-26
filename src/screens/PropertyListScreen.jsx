@@ -69,8 +69,6 @@ const PropertyListScreen = () => {
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
     setPage(1);
-    
-    // Update URL params for better sharing and navigation
     const params = new URLSearchParams();
     if (newFilters.keyword) params.append('keyword', newFilters.keyword);
     if (newFilters.propertyType) params.append('propertyType', newFilters.propertyType);
@@ -135,8 +133,7 @@ const PropertyListScreen = () => {
               <PropertyCard key={property._id} property={property} />
             ))}
           </div>
-          
-          {/* Pagination */}
+ 
           {pages > 1 && (
             <div className="flex justify-center mt-8">
               <nav className="inline-flex rounded-md shadow">

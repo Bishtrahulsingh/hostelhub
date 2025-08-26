@@ -1,27 +1,18 @@
 import asyncHandler from 'express-async-handler';
 import Roommate from '../models/roommateModel.js';
 
-// @desc    Fetch all roommates
-// @route   GET /api/roommates
-// @access  Public
 const getRoommates = asyncHandler(async (req, res) => {
   const pageSize = 10;
   const page = Number(req.query.pageNumber) || 1;
 
-  // Log incoming query
-  console.log('Incoming query:', req.query);
-
-  // Filter by location
   const locationFilter = req.query.location?.trim()
     ? { location: { $regex: req.query.location.trim(), $options: 'i' } }
     : {};
 
-  // Filter by gender
   const genderFilter = req.query.gender
     ? { gender: req.query.gender }
     : {};
 
-  // Filter by budget range
   const budgetFilter = {};
   if (req.query.minBudget) {
     budgetFilter.budget = {
@@ -36,12 +27,10 @@ const getRoommates = asyncHandler(async (req, res) => {
     };
   }
 
-  // Filter by occupation
   const occupationFilter = req.query.occupation
     ? { occupation: req.query.occupation }
     : {};
 
-  // Filter by preferences
   const preferencesFilter = {};
   if (req.query.smoking === 'true') {
     preferencesFilter['preferences.smoking'] = true;
@@ -50,10 +39,8 @@ const getRoommates = asyncHandler(async (req, res) => {
     preferencesFilter['preferences.veg'] = true;
   }
 
-  // Only show active listings
   const activeFilter = { isActive: true };
 
-  // Merge all filters
   const filters = {
     ...locationFilter,
     ...genderFilter,
@@ -63,16 +50,12 @@ const getRoommates = asyncHandler(async (req, res) => {
     ...activeFilter,
   };
 
-  // Debug filters
-  console.log('Final filters:', filters);
 
   const count = await Roommate.countDocuments(filters);
   const roommates = await Roommate.find(filters)
     .limit(pageSize)
     .skip(pageSize * (page - 1))
     .sort({ createdAt: -1 });
-
-  console.log(`Found ${roommates.length} roommates`);
 
   res.json({
     roommates,
@@ -82,9 +65,6 @@ const getRoommates = asyncHandler(async (req, res) => {
   });
 });
 
-// @desc    Fetch single roommate
-// @route   GET /api/roommates/:id
-// @access  Public
 const getRoommateById = asyncHandler(async (req, res) => {
   const roommate = await Roommate.findById(req.params.id).populate(
     'user',
@@ -98,10 +78,6 @@ const getRoommateById = asyncHandler(async (req, res) => {
     throw new Error('Roommate listing not found');
   }
 });
-
-// @desc    Create a roommate listing
-// @route   POST /api/roommates
-// @access  Private
 const createRoommate = asyncHandler(async (req, res) => {
   const {
     name,
@@ -138,9 +114,6 @@ const createRoommate = asyncHandler(async (req, res) => {
   res.status(201).json(createdRoommate);
 });
 
-// @desc    Update a roommate listing
-// @route   PUT /api/roommates/:id
-// @access  Private
 const updateRoommate = asyncHandler(async (req, res) => {
   const {
     name,
@@ -184,9 +157,6 @@ const updateRoommate = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Delete a roommate listing
-// @route   DELETE /api/roommates/:id
-// @access  Private
 const deleteRoommate = asyncHandler(async (req, res) => {
   const roommate = await Roommate.findById(req.params.id);
 

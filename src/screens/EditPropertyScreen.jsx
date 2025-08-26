@@ -74,7 +74,6 @@ const EditPropertyScreen = () => {
       setIsLoading(true);
       const { data } = await axios.get(`/api/properties/${id}`);
       console.log(data)
-      // Check if the user is the owner of the property
       if (data.owner._id.toString() !== user._id.toString()) {
         toast.error('You can only edit your own properties');
         navigate('/my-properties');
@@ -84,7 +83,6 @@ const EditPropertyScreen = () => {
       setProperty(data);
       setExistingImages(data.images || []);
       
-      // Set form data
       setFormData({
         name: data.name,
         description: data.description,
@@ -183,8 +181,6 @@ const EditPropertyScreen = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Validate form
     if (!formData.name || !formData.description || !formData.price) {
       toast.error('Please fill in all required fields');
       return;
@@ -201,7 +197,6 @@ const EditPropertyScreen = () => {
     }
     
     try {
-      // Upload new images if any
       let newImageUrls = [];
       if (newImages.length > 0) {
         newImageUrls = await uploadImages();
@@ -209,7 +204,6 @@ const EditPropertyScreen = () => {
       
       setIsSubmitting(true);
       
-      // Combine existing and new images
       const allImages = [...existingImages, ...newImageUrls];
       
       if (allImages.length === 0) {
@@ -218,7 +212,6 @@ const EditPropertyScreen = () => {
         return;
       }
       
-      // Update property
       const propertyData = {
         ...formData,
         price: Number(formData.price),
@@ -541,7 +534,6 @@ const EditPropertyScreen = () => {
             <div className="mb-8 border-t border-gray-200 pt-6">
               <h2 className="text-xl font-semibold mb-4">Property Images</h2>
               
-              {/* Existing Images */}
               {existingImages.length > 0 && (
                 <div className="mb-6">
                   <h3 className="text-lg font-medium mb-3">Current Images</h3>
@@ -565,8 +557,7 @@ const EditPropertyScreen = () => {
                   </div>
                 </div>
               )}
-              
-              {/* Upload New Images */}
+
               <div className="mb-6">
                 <label className="block w-full">
                   <div className="flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-6 cursor-pointer hover:border-blue-500 transition-colors">
@@ -585,8 +576,7 @@ const EditPropertyScreen = () => {
                   </div>
                 </label>
               </div>
-              
-              {/* New Images Preview */}
+
               {newImages.length > 0 && (
                 <div>
                   <h3 className="text-lg font-medium mb-3">New Images</h3>

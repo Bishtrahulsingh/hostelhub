@@ -10,7 +10,7 @@ const RoommateCard = ({ roommate }) => {
         <div className="sm:w-1/3 flex justify-center">
           <div className="h-40 w-40 sm:h-32 sm:w-32 rounded-full overflow-hidden">
             <img
-              src={roommate.profileImage || 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg'}
+              src={roommate.profileImage || 'https://share.google/images/uAIyvIQUWc2i38KfD'}
               alt={roommate.name}
               className="w-full h-full object-cover"
             />
