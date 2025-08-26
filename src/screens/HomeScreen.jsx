@@ -48,7 +48,6 @@ const handleSearch = (e) => {
 
   return (
     <div>
-      {/* Hero Section */}
       <section className="bg-[url('/public/hostelbackground.jpg')] bg-center text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
@@ -76,7 +75,7 @@ const handleSearch = (e) => {
         </div>
       </section>
 
-      {/* Categories Section */}
+    
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
@@ -117,7 +116,6 @@ const handleSearch = (e) => {
         </div>
       </section>
 
-      {/* Featured Properties Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
@@ -143,7 +141,6 @@ const handleSearch = (e) => {
         </div>
       </section>
 
-      {/* Recent Roommates Section */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
@@ -169,7 +166,6 @@ const handleSearch = (e) => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
@@ -204,7 +200,6 @@ const handleSearch = (e) => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-12 bg-gradient-to-r from-amber-500 to-amber-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">

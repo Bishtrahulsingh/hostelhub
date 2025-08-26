@@ -90,8 +90,6 @@ const PropertyDetailScreen = () => {
     try {
       setSubmittingReview(true);
       await axios.post(`/api/properties/${id}/reviews`, review);
-      
-      // Refetch property to get updated reviews
       const { data } = await axios.get(`/api/properties/${id}`);
       setProperty(data);
       
@@ -145,9 +143,7 @@ const PropertyDetailScreen = () => {
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Column - Images and Details */}
         <div className="lg:col-span-2">
-          {/* Image Gallery */}
           <div className="relative rounded-lg overflow-hidden mb-6 h-[400px]">
             <img
               src={property.images[activeImageIndex] || defaultImage}
@@ -176,8 +172,6 @@ const PropertyDetailScreen = () => {
               {property.propertyType}
             </div>
           </div>
-          
-          {/* Thumbnail Images */}
           {property.images.length > 1 && (
             <div className="flex overflow-x-auto space-x-2 mb-8 pb-2">
               {property.images.map((image, index) => (
@@ -198,7 +192,6 @@ const PropertyDetailScreen = () => {
             </div>
           )}
           
-          {/* Property Details */}
           <div className="bg-white p-6 rounded-lg shadow-md mb-8">
             <h1 className="text-3xl font-bold mb-2">{property.name}</h1>
             

@@ -40,7 +40,6 @@ const MyPropertiesScreen = () => {
       
       const { data } = await axios.get('/api/properties');
       
-      // Filter properties owned by the current user
       const myProperties = data.properties.filter(
         property => property.owner.toString() === user._id.toString()
       );
@@ -209,8 +208,7 @@ const MyPropertiesScreen = () => {
           </div>
         </div>
       )}
-      
-      {/* Delete Confirmation Modal */}
+
       {deleteModal.show && (
         <div className="fixed inset-0 z-50 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center">

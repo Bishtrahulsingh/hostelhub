@@ -1,12 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-
-// Layout Components
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-
-// Screens
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -21,7 +17,6 @@ import MyPropertiesScreen from './screens/MyPropertiesScreen';
 import EditPropertyScreen from './screens/EditPropertyScreen';
 import NotFoundScreen from './screens/NotFoundScreen';
 
-// Context Providers
 import { AuthProvider } from './context/AuthContext';
 
 function App() {

@@ -59,8 +59,6 @@ const AddPropertyScreen = () => {
         navigate('/');
         return;
       }
-      
-      // Pre-fill contact info with user data
       setFormData(prevData => ({
         ...prevData,
         contactInfo: {
@@ -146,7 +144,6 @@ const AddPropertyScreen = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate form
     if (!formData.name || !formData.description || !formData.price) {
       toast.error('Please fill in all required fields');
       return;
@@ -163,13 +160,10 @@ const AddPropertyScreen = () => {
     }
     
     try {
-      // Upload images first
       const imageUrls = await uploadImages();
       if (!imageUrls) return;
       
       setIsSubmitting(true);
-      
-      // Create property
       const propertyData = {
         ...formData,
         price: Number(formData.price),

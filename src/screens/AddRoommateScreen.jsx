@@ -111,8 +111,7 @@ const AddRoommateScreen = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Validate form
+   
     if (!formData.name || !formData.age || !formData.budget || !formData.location || !formData.description) {
       toast.error('Please fill in all required fields');
       return;
@@ -124,15 +123,13 @@ const AddRoommateScreen = () => {
     }
     
     try {
-      // Upload image if selected
       let imageUrl = null;
       if (image) {
         imageUrl = await uploadImage();
       }
       
       setIsSubmitting(true);
-      
-      // Create roommate listing
+   
       const roommateData = {
         ...formData,
         age: Number(formData.age),
@@ -180,7 +177,7 @@ const AddRoommateScreen = () => {
                       src={
                         image
                           ? URL.createObjectURL(image)
-                          : user?.profileImage || 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg'
+                          : user?.profileImage || 'https://share.google/images/uAIyvIQUWc2i38KfD'
                       }
                       alt={formData.name}
                       className="w-full h-full object-cover"
@@ -300,7 +297,7 @@ const AddRoommateScreen = () => {
                     onChange={handleChange}
                     rows="4"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Describe yourself, your lifestyle, and what you're looking for in a roommate"
+                    placeholder="Describe yourself and what you're looking for in a roommate"
                     required
                   ></textarea>
                 </div>

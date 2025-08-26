@@ -7,7 +7,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Check if user is logged in
   useEffect(() => {
     const checkLoggedIn = async () => {
       try {
@@ -23,7 +22,6 @@ export const AuthProvider = ({ children }) => {
     checkLoggedIn();
   }, []);
 
-  // Login user
   const login = async (email, password) => {
     const { data } = await axios.post('/api/users/auth', { email, password },{
   withCredentials: true,
@@ -32,20 +30,17 @@ export const AuthProvider = ({ children }) => {
     return data;
   };
 
-  // Register user
   const register = async (userData) => {
     const { data } = await axios.post('/api/users', userData);
     setUser(data); 
     return data;
   };
 
-  // Logout user
   const logout = async () => {
     await axios.post('/api/users/logout');
     setUser(null);
   };
 
-  // Update user profile
   const updateProfile = async (userData) => {
     const { data } = await axios.put('/api/users/profile', userData);
     setUser(data);

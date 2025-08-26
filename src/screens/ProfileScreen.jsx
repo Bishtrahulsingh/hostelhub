@@ -113,8 +113,6 @@ const ProfileScreen = () => {
 
       await updateProfile(updatedUser);
       toast.success('Profile updated successfully');
-      
-      // Reset password fields
       setFormData({
         ...formData,
         password: '',
@@ -155,7 +153,7 @@ const ProfileScreen = () => {
                   src={
                     image
                       ? URL.createObjectURL(image)
-                      : formData.profileImage || 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg'
+                      : formData.profileImage || 'https://share.google/images/uAIyvIQUWc2i38KfD'
                   }
                   alt={formData.name}
                   className="w-full h-full object-cover"

@@ -8,7 +8,7 @@ const PropertyCard = ({ property }) => {
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
       <div className="relative h-48 overflow-hidden">
         <img
-          src={property.images[0] || 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg'}
+          src={property.images[0] || 'https://share.google/images/cQJ6sPIh35UYRTCaE'}
           alt={property.name}
           className="w-full h-full object-cover"
         />
